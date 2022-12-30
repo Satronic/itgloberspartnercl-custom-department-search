@@ -1,0 +1,7 @@
+{
+  "search-department": {
+    "component": "SearchDepartment",
+    "compositions": "children",
+    "render": "client"
+  }
+}
