@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-disable prettier/prettier */
-import React, { useState } from 'react'
+import React from 'react'
 
 interface Department {
   name: string
@@ -9,16 +9,15 @@ interface Department {
 
 type ListDepartmentProps = {
   listDepartments: Department[]
+  setSlug: React.Dispatch<React.SetStateAction<string>>
 }
 
-const DepartmentGroup = ({ listDepartments }: ListDepartmentProps) => {
-  const [slug, setSlug] = useState('')
-
+const DepartmentGroup = ({ listDepartments, setSlug }: ListDepartmentProps) => {
   const onSelectDepartment = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSlug(event.target.value)
+    setSlug(`${event.target.value}`)
   }
 
-  console.log('ListDepartment', slug)
+  // console.log('ListDepartment', slug)
 
   return (
     <select name="" id="" onChange={(event) => onSelectDepartment(event)}>
